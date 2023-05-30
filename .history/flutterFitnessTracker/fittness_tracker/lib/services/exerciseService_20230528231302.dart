@@ -1,0 +1,28 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fittness_tracker/models/exercise.dart';
+
+class ExerciseService {
+  FirebaseFirestore instance = FirebaseFirestore.instance;
+
+  Future<void> addExercise(Exercise ex) async {
+    CollectionReference<Map<String, dynamic>> exerciseCollection =
+        instance.collection('Exercises');
+
+    try {
+      exerciseCollection.add(ex.toJson());
+      print("EKLEDIM");
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  Future<List> getExercise() async {
+    CollectionReference<Map<String, dynamic>> exerciseCollection =
+        instance.collection('exercises');
+    QuerySnapshot querySnapshot = await exerciseCollection.get();
+
+    final allData = querySnapshot.docs.map((doc) => doc.data()).toList();
+
+    return allData;
+  }
+}
