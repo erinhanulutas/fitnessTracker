@@ -170,9 +170,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
                           exerciseService.update(exs[index]);
                         },
                       );
-                    } else {
-                      return SizedBox.shrink();
-                    }
+                    } else {}
                   },
                 );
               } else {

@@ -171,7 +171,8 @@ class _WorkoutPageState extends State<WorkoutPage> {
                         },
                       );
                     } else {
-                      return SizedBox.shrink();
+                      print("YOOK");
+                      return Text("Yok");
                     }
                   },
                 );

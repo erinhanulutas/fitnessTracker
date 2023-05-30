@@ -45,13 +45,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   // go to new workotupage
-  void goToWorkoutPage(String workoutName, String id) {
+  void goToWorkoutPage(String workoutName) {
     Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => WorkoutPage(
             workoutName: workoutName,
-            workoutId: id,
+            workoutId: "testt",
           ),
         ));
   }
@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
       future: ws.getWorkout(),
       builder: (context, snapshot) {
         List<dynamic>? x = snapshot.data;
-        print(x);
+        print("asdlasdkoasd");
 
         if (snapshot.connectionState == ConnectionState.done) {
           return Scaffold(
@@ -117,8 +117,7 @@ class _HomePageState extends State<HomePage> {
                     title: Text(x[index]["name"]),
                     trailing: IconButton(
                       icon: const Icon(Icons.arrow_forward_ios),
-                      onPressed: () =>
-                          goToWorkoutPage(x[index]["name"], x[index]["id"]),
+                      onPressed: () => goToWorkoutPage(x[index]["name"]),
                     ),
                   );
                 },

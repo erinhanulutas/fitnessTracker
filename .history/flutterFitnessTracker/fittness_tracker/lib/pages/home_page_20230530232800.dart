@@ -45,13 +45,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   // go to new workotupage
-  void goToWorkoutPage(String workoutName, String id) {
+  void goToWorkoutPage(String workoutName) {
     Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => WorkoutPage(
             workoutName: workoutName,
-            workoutId: id,
+            workoutId: "testt",
           ),
         ));
   }
@@ -117,8 +117,7 @@ class _HomePageState extends State<HomePage> {
                     title: Text(x[index]["name"]),
                     trailing: IconButton(
                       icon: const Icon(Icons.arrow_forward_ios),
-                      onPressed: () =>
-                          goToWorkoutPage(x[index]["name"], x[index]["id"]),
+                      onPressed: () => goToWorkoutPage(x[index]["name"]),
                     ),
                   );
                 },

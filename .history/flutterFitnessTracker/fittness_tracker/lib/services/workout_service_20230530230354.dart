@@ -24,7 +24,7 @@ class WorkoutService {
     CollectionReference<Map<String, dynamic>> workoutCollection =
         instance.collection('workout');
     QuerySnapshot querySnapshot = await workoutCollection.get();
-    // Buraya workout id yi eklemek lazım düşünelim
+
     final allData = querySnapshot.docs.map((doc) => doc.data()).toList();
 
     return allData;

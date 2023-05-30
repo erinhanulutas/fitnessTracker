@@ -152,12 +152,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
                   itemBuilder: (context, index) {
                     // yeni yaratsan direk appten 1sn
                     Exercise current = exs[index];
-
                     // buraya neden 1 kere dönüyor onu anlamaya çalışıyorum
-                    // 1 kere dönyor lanet id si  söyle id si direk başka bişey ki şuan
-                    // dışarda kaç mı 1 kere döndürüyo direk diyosun
-                    // evt
-                    //ya
                     if (current.workoutId == widget.workoutId) {
                       return ExerciseTile(
                         exerciseName: exs[index].name,
@@ -170,8 +165,6 @@ class _WorkoutPageState extends State<WorkoutPage> {
                           exerciseService.update(exs[index]);
                         },
                       );
-                    } else {
-                      return SizedBox.shrink();
                     }
                   },
                 );
