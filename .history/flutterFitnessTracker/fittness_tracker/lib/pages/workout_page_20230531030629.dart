@@ -182,56 +182,5 @@ class _WorkoutPageState extends State<WorkoutPage> {
             }
           },
         ));
-    /*
-    return Consumer<WorkoutData>(
-      builder: (context, value, child) => Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.blueAccent.withAlpha(150),
-          title: Text(
-            widget.workoutName,
-            style: const TextStyle(color: Colors.black),
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: createNewExercise,
-          child: const Icon(Icons.fitness_center),
-        ),
-        body: ListView.builder(
-          itemCount: value.numberOfExercisesInWorkout(widget.workoutName),
-          itemBuilder: (context, index) => ExerciseTile(
-            exerciseName: value
-                .getReleventWorkout(widget.workoutName)
-                .exercises[index]
-                .name,
-            weight: value
-                .getReleventWorkout(widget.workoutName)
-                .exercises[index]
-                .weight,
-            reps: value
-                .getReleventWorkout(widget.workoutName)
-                .exercises[index]
-                .reps,
-            sets: value
-                .getReleventWorkout(widget.workoutName)
-                .exercises[index]
-                .sets,
-            isComplete: value
-                .getReleventWorkout(widget.workoutName)
-                .exercises[index]
-                .isCompleted,
-            onCheckboxChanged: (val) => onCheckboxChanged(
-              widget.workoutName,
-              value
-                  .getReleventWorkout(widget.workoutName)
-                  .exercises[index]
-                  .name,
-            ),
-          ),
-        ),
-      ),
-    );
-     */
   }
 }

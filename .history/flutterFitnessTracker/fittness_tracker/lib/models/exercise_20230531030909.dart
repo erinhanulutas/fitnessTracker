@@ -6,7 +6,7 @@ class Exercise {
   int weight = -1;
   int reps = -1;
   int sets = -1;
-  String? workoutId;
+  String workoutId = "";
   bool isCompleted = false;
 
   Exercise({
